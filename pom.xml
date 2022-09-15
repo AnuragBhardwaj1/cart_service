@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cart_service</name>
 	<description>Project for cart_service</description>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>18</java.version>
 	</properties>
@@ -38,6 +39,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>9.3.0</version>
 			</plugin>
 		</plugins>
 	</build>
