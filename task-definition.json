@@ -1,0 +1,43 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:331061725593:task-definition/ctdf-yccoe-chrome-devtools-login-hidden-pwd:1",
+    "containerDefinitions": [
+        {
+            "name": "yccoe-chrome-devtools-login-hidden-pwd-container",
+            "image": "331061725593.dkr.ecr.ap-south-1.amazonaws.com/ctfd-yccoe:latest",
+            "cpu": 0,
+            "memory": 7000,
+            "portMappings": [
+                {
+                    "containerPort": 8086,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": []
+        }
+    ],
+    "family": "ctdf-yccoe-chrome-devtools-login-hidden-pwd",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EXTERNAL",
+        "EC2"
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "2048",
+    "memory": "7168",
+    "registeredAt": "2022-07-19T21:54:56.101000+05:30",
+    "registeredBy": "arn:aws:iam::331061725593:user/kartikays@sahaj.ai"
+}

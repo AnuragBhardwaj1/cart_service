@@ -25,7 +25,7 @@ env:
   ECR_REPOSITORY: "arn:aws:ecs:us-west-2:331061725593:cluster/anurag-pathshala"           # set this to your Amazon ECR repository name
   ECS_SERVICE: "cart-service"                 # set this to your Amazon ECS service name
   ECS_CLUSTER: "anurag-pathshala"                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: "arn:aws:ecs:us-west-2:331061725593:task-definition/ctdf-yccoe-chrome-devtools-login-hidden-pwd:1" # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: task-definition.json
   # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: "yccoe-chrome-devtools-login-hidden-pwd-container"           # set this to the name of the container in the
   # containerDefinitions section of your task definition
