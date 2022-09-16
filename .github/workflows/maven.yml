@@ -25,5 +25,5 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Create Image
-      uses: cart_service/actions
+      uses: AnuragBhardwaj1/cart_service/actions@v1
 
