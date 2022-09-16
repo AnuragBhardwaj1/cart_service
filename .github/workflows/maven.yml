@@ -1,6 +1,17 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
+# notes: To set up maven package, following are the steps:
+# 1. package with maven
+# 2. Build and test Dockerfile
+#    - installing essential libs[maven, git, jre]
+#     - get the prerequisite for the libs like wget, tag, git
+#     - get the compatible versions of jre-18.
+# 3. Build docker images in ci
+#   - use github actions to checkout, install and package.
+#   - push the created image to dockerhub using credentials with action build-push-action.
+
+
 name: Java CI with Maven
 
 on:
@@ -13,7 +24,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 18
@@ -24,8 +34,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-#    - name: Create Image
-#      uses: AnuragBhardwaj1/cart_service/actions@v1
     - name: Set up Docker Build
       uses: docker/setup-buildx-action@v2
     - name: Login to DockerHub
