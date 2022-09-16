@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up JDK 18
       uses: actions/setup-java@v3
       with:
@@ -24,6 +24,19 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Create Image
-      uses: AnuragBhardwaj1/cart_service/actions@v1
+#    - name: Create Image
+#      uses: AnuragBhardwaj1/cart_service/actions@v1
+    - name: Set up Docker Build
+      uses: docker/setup-buildx-action@v2
+    - name: Login to DockerHub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        push: true
+        tags: anuragbhardwaj/cart_service:latest
 

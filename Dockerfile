@@ -19,12 +19,12 @@ RUN ["apt", "install", "-y", "openjdk-18-jre"]
 #WORKDIR "./src"
 #RUN ["git clone git@github.com:AnuragBhardwaj1/cart_service.git"]
 #RUN ["mvn", "package"]
-COPY ["target/cart_service-*.jar", "app.jar"]
+#COPY ["target/cart_service-*.jar", "app.jar"]
 
 #RUN jar file
 #RUN ["pwd"]
 #ENTRYPOINT ""
-#RUN ["java", "cart_service-0.0.1-SNAPSHOT.jar"]
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "cart_service-0.0.1-SNAPSHOT.jar"]
+#ENTRYPOINT ["java", "-jar", "app.jar"]
 
 #ENTRYPOINT ["java","-jar","/app.jar"]
