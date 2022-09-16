@@ -1,0 +1,6 @@
+build:
+  name: 'Create Docker'
+  description: 'Create image from dockerfile'
+  runs:
+    using: 'docker'
+    image: 'Dockerfile'
